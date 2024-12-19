@@ -1,0 +1,131 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+    <style>
+        .slide1 { background-image: url("{{ url_for('static', filename='msee.jpeg') }}"); }
+        .slide2 { background-image: url("{{ url_for('static', filename='armstrong.jpeg') }}"); }
+        .slide3 { background-image: url("{{ url_for('static', filename='walc.jpeg') }}"); }
+    </style>
+
+</head>
+<body id="body">
+
+    
+    <form method="POST">
+
+        <div id="header">
+            <img src="{{ url_for('static', filename='foca.png') }}" id="focalimage">
+        
+        </div>
+        
+<div id="container1">
+    <div class="slideshow">
+        <div class="slide slide1"></div>
+        <div class="slide slide2"></div>
+        <div class="slide slide3"></div>
+        
+    </div>
+
+    <div class="typewriter">
+        <h1 id="welcome">Focal Realty</h1>
+    </div>
+
+
+
+    
+    
+</div>
+
+<div id="container2">
+    <div id="child1">
+        <div id="date-slider-container">
+            <div id="year">
+                <label for="yearSlider" id="yearLabel">Select Year:</label>
+                <input type="range" id="yearSlider" min="1990" max="2024" value="2023">
+                <span id="selectedYear">2023</span>
+            </div>
+            <div id="month">
+                <label for="monthSlider" id="monthLabel">Select Month:</label>
+                <input type="range" id="monthSlider" min="1" max="12" value="1">
+                <span id="selectedMonth">January</span>
+            </div>
+            <div id="day">
+                <label for="daySlider" id="dayLabel">Select Day:</label>
+                <input type="range" id="daySlider" min="1" max="31" value="1">
+                <span id="selectedDay">1</span>
+            </div>
+        </div>
+        <input type="hidden" id="from_date" name="from_date" required>
+    </div>
+    <div id="child2">
+        <div id="county1">
+            <label for="county" id="countyp" >County:</label>
+            <div id="county">
+                <select id="county" name="county" required>
+                <option value="MiddlesexNorth">North Middlesex</option>
+                <option value="MiddlesexSouth">South Middlesex</option>
+                <option value="BerkSouth">South Berkshire</option>
+                <option value="BerkNorth">North Berkshire</option>
+                <option value="BerkMiddle">Middle Berkshire</option>
+                <option value="Hampshire">Hampshire</option>
+                <option value="Franklin">Franklin</option>
+                <option value="Dukes">Dukes</option>
+                <option value="Suffolk">Suffolk</option>
+                <option value="Worcester">Worcester</option>
+                <option value="Nantucket">Nantucket</option>
+                </select>
+                <!-- Add other county options here -->
+             </div>
+        </div>
+    
+  
+    
+    
+        <div id="scraper">
+            <button type="submit" id="scrape">Scrape Data</button>
+           
+        
+        </div>
+   </div>
+</div>
+  
+<a href="{{ csv_path }}" download="clean_data.csv">
+    <div id="download">
+      <button>Download CSV</button>
+    </div>
+    
+</a>
+
+    
+
+
+
+    
+    
+</div>
+
+
+
+
+      
+      
+
+
+     
+
+        
+ 
+   
+    </form>
+    
+</body>
+</html>

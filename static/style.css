@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    background-color: #333333;;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 2vw; 
+    height: 5vh;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: -1;
+    
+    animation: slide-animation 12s infinite;
+}
+#container1{
+    height: 60vh;
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#container2{
+    
+    background-color: #1b1b1b;
+    height: 60vh;
+    display: flex;                    /* This should ensure horizontal layout */
+    flex-direction: row;             /* Explicitly set the direction to row */
+    justify-content: space-between;  /* This separates the child divs */
+    align-items: stretch;            /* Makes children stretch to fill the container height */
+    padding: 20px;                   /* Padding inside the container */
+    gap: 20px;                       /* Space between children */
+    background-color: #1b1b1b;       /* Background color of the container */
+    height: 60vh;
+}
+#container1, #container2{
+    position: relative; /* Needed for absolute positioning of the pseudo-elements */
+}
+
+#child1, #child2 {
+    flex: 1;                      /* Each child flexes to fill the available space */
+    margin: 10px;                 /* Adds space between the children */
+}
+
+
+
+
+
+
+#container1:after, #container2:after{
+    content: '';
+    display: block;
+    height: 4px;
+    background-color:#ceb888;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Create the keyframes for the animation */
+@keyframes slide-animation {
+    0%, 100% { opacity: 0; }
+    8%, 33% { opacity: 1; } /* 1st image */
+    41%, 66% { opacity: 0; } /* 2nd image */
+    74%, 99% { opacity: 0; } /* 3rd image */
+}
+
+/* Delay the animations for each slide */
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 8s;
+}
+
+
+.typewriter h1 {
+    font-family: monospace; /* Use a monospace font if possible */
+    overflow: hidden;
+    font-size: 40px;
+   
+    white-space: nowrap;
+    margin: 0 auto;
+    position: absolute;
+    color: white;
+    top: 40%;
+    left: 40%;
+    width: 12ch; /* Approximate based on character count */
+
+}
+
+
+.rect-link1 {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: transparent;
+    border: 4px solid white;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    flex-wrap: nowrap;
+    max-width: 50%; /* Adjust max-width to control the width of the element */
+    padding: 10px 40px; /* Adjust padding if necessary, redundant declaration removed */
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2vw;
+    height: 5vw;
+    position: relative;
+    left: 25%;
+    top: 70%;
+    min-width: 100px;
+    min-height: 40px;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for border color and transform */
+}
+
+.rect-link1 {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+}
+.rect-link1:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background on hover */
+    transform: scale(1.05); /* Slightly enlarge the link */
+}
+
+
+
+
+
+#headerp{
+    text-align: center;
+    font-size: larger;
+    color: darkred;
+}
+
+#focalimage{
+   position: absolute;
+   left: 80%;
+   height: 60px;
+}
+
+#date{
+    position: absolute;
+    left: 30%;
+    margin-top: 20px;
+    text-align: center;
+}
+#county{
+    margin-top: 10px;
+    text-align: center;
+}
+#scrape{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+
+
+#download{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#county1
+{   text-align: center;
+    color: white;
+    position: relative;
+    margin-top: 20px;
+    
+}
+
+#year{
+    color: white;
+}
+
+#month{
+    color: white;
+}
+
+#day{
+    color:white;
+}
+
+#date-slider-container {
+    display: flex;             /* Use flexbox for layout */
+    flex-direction: column;    /* Stack children vertically */
+    align-items: center;       /* Center-align items horizontally */
+    justify-content: center;   /* Center content vertically in the container */
+    padding: 20px;             /* Add some padding around the content */
+    gap: 10px;                 /* Space between each child element */
+    margin: auto;              /* Center the container on the page horizontally */
+    width: 50%;                /* Set a specific width, adjust as needed */
+    max-width: 600px;          /* Maximum width of the container */
+ /* Optional: background color */
+}
+
